@@ -1,4 +1,4 @@
-Feature: Create A Post
+Feature: Create a Post
   As an author
   I want to create a post
   So that I can share my knowledge with the world
