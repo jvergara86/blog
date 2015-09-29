@@ -22,7 +22,7 @@ Feature: List of Posts
 	Then the new post page shows the last ten posts from the author
     And each post is ordered by its published date
 
-  Scenario: Accessing the new post page
+  Scenario: Accessing the new post page from the home page
     Given I am on the home page
     When the new post page link is used
     Then the new post page is opened

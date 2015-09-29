@@ -13,7 +13,7 @@ Feature: Create a Post
     When I create a invalid post
     Then my post is not created
   
-  Scenario: Accessing the home page
+  Scenario: Accessing the home page from the submission page
     Given I am on the post submission page
 	When the home page link is used
 	Then the home page is opened
