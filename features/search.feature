@@ -4,10 +4,10 @@ Feature: Search
   I want to search for posts by title
   So that I can find specific information
 
-  Scenario: Searching from home page
+  Scenario: Searching from the home page
     Given I am on the home page
     When I enter text into the search box
-	Then the results of my search should display
+	Then the search results page is opened
 
   Scenario: Search is performed
     Given I have entered text into the search box
@@ -34,4 +34,4 @@ Feature: Search
   Scenario: No search results displayed
     Given a search has been performed
     When no search results are found
-    Then display a friendly message apologizing not finding any posts
+    Then display a friendly message apologizing for not finding any posts

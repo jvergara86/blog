@@ -6,7 +6,7 @@ require 'NewPostPage'
 
 #Scenario: Accessing the newest post from the home page
 Given /^I am on the home page$/ do
-    pending "WIP"
+  pending "WIP"
   #Open browser and home page
 end
 

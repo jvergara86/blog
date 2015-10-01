@@ -24,12 +24,12 @@ Feature: Delete a Post
     When I deny the deletion of this post
     Then do not delete this post
 
-  Scenario: Deleting posts from home page
+  Scenario: Deleting posts off the home page
     Given I am on the home page
     When the new post page is shown
     Then deleted posts are not displayed
 
-  Scenario: Deleting posts from search results
+  Scenario: Deleting posts off the search results
     Given a search has been performed
     When the search results are displayed
     Then deleted posts are not displayed in the search results	
