@@ -1,19 +1,19 @@
-Feature: Create a Post
+Feature: Creating A Post
   As an author
   I want to create a post
-  So that I can share my knowledge with the world
+  So that I can share my work with the world
 
   Scenario: Creating a valid post
     Given I am on the post submission page
 	When I create a valid post
 	Then my post is created
   
-  Scenario: Creating an invalid post
+  Scenario: Adding duplicate posts
     Given I am on the post submission page
-    When I create a invalid post
-    Then my post is not created
-  
-  Scenario: Accessing the home page from the submission page
+	When I create a duplicate post
+	Then I get an error
+
+  Scenario: Accessing home page from the submission page
     Given I am on the post submission page
-	When the home page link is used
-	Then the home page is opened
+	When I click the home page button
+	Then I am directed to the home page

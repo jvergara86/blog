@@ -1,0 +1,8 @@
+require 'page-object'
+
+class EntirePostPage
+  include PageObject
+  
+  page_url "http://localhost:4567/entire_post"
+  
+end

@@ -1,50 +1,38 @@
-require 'watir-webdriver'
-require 'page-object'
-require 'SubmissionPage'
-
-
 #Scenario: Creating a valid post
-Given /^I am on the post submission page$/ do
-  pending "WIP"
-  #Open browser and submission page
-end
-
-When /^When I create a valid post$/ do
-  pending "WIP"
+#Given statement is in common_steps.rb
+When /^I create a valid post$/ do
+ 
   #Fill in title
   #Fill in body
-  #Click the submit_button
+  #Click the submit button
+  
+  @page.create_valid_post
 end
 
 Then /^my post is created$/ do
-  pending "WIP"
-  #@variable includes the post (title and body), date, and author name
-  #@variable is saved to page
+  
+  #@variable includes the post
+  
+  expect(@page.html).to include("Submitted!")
 end
 
-
-#Scenario: Creating an invalid post
-#Using a repeated Given statement
-When /^I create a invalid post$/ do
-  pending "WIP"
-  #Didn't fill in title or body (or both).
-  #Click submit
+#Scenario: Adding duplicate posts
+#Given statement is in common_steps.rb
+When /^I create a duplicate post$/ do
+  @page.create_duplicate_posts
 end
 
-Then /^my post is not created$/ do
-  pending "WIP"
-  #@variable is not created or saved
+Then /^I get an error$/ do
+  sleep 1
+  expect(@page.html).to include("Error!")
 end
 
-#Scenario: Accessing the home page from the submission page
-#Using a repeated Given statement
-
-When /^the home page link is used$/ do
-  pending "WIP"
-  #Click the home_page_button
+#Scenario: Accessing home page from the submission page
+#Given statement is in common_steps.rb
+When /^I click the home page button$/ do
+  @page.go_home
 end
 
-Then /^the home page is opened$/ do
-  pending "WIP"
-  #browser.goto "home page URL"
+Then /^I am directed to the home page$/ do
+  expect(@page.html).to include("Home Page")
 end
