@@ -8,6 +8,5 @@ class HomePage
 
   button(:create_new_post, :id => "create-link")
 
-
   
 end

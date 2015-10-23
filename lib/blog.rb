@@ -36,7 +36,7 @@ html
 		    dl 
 		      dt Title
 			  <dd>
-			  <a href="/entire_post/<%= i %>">
+			  <a id=i href="/entire_post/0">
 			  = post['title']
 			  </a>
 		      </dd>
@@ -46,16 +46,21 @@ html
 VIEW
 end
 
-get '/entire_post/:i' do
-  $post = $blog_posts[params[:i]]
+get '/entire_post/0' do
   slim <<-VIEW
 doctype html
 html
   head
     title Entire Post
   body
-    div
-	  = $post['title']
+	  - $blog_posts.each_with_index do |post, i|
+	      div id='entire-title'
+            = post['title']
+          div id='entire-author'
+		    = post['author']
+		  div id='entire-body'
+			= post['body']
+	  input type='button' id='home-link' value="Home Page" onclick="window.location.href='http://localhost:4567/home'"
 VIEW
 end
 

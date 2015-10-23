@@ -20,10 +20,10 @@ end
 #Given statement is in common_steps.rb
 When /^I create a duplicate post$/ do
   @page.create_duplicate_posts
+  sleep 1
 end
 
 Then /^I get an error$/ do
-  sleep 1
   expect(@page.html).to include("Error!")
 end
 
