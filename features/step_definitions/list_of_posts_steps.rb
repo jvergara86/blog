@@ -1,3 +1,4 @@
+
 #Scenario: Showing newly added posts
 #Given statement is in common_steps.rb
 When /^an author publishes a new post/ do
@@ -25,4 +26,16 @@ end
 Then /^the post will show the title and author name$/ do
   expect(@page.html).to include("Post with a Title")
   expect(@page.html).to include("Post with an Author") 
+end
+
+
+#Scenario: Accessing new post page
+#Given statement is in common_steps.rb
+When /^I click the new post button$/ do
+  @page.go_create_page
+end
+
+Then /^the new post page is displayed$/ do
+  @page = CreationPage.new @browser
+  expect(@page.home_element.text).to eq "Home Page"
 end

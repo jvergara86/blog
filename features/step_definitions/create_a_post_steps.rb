@@ -1,3 +1,4 @@
+require 'watir-webdriver'
 #Scenario: Creating a valid post
 #Given statement is in common_steps.rb
 When /^I create a valid post$/ do

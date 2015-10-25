@@ -14,3 +14,7 @@ Feature: List Of Posts
 	When a post is created
 	Then the post will show the title and author name
 	
+  Scenario: Accessing new post page
+    Given I am on the home page
+	When I click the new post button
+	Then the new post page is displayed

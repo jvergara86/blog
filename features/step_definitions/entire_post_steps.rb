@@ -5,7 +5,7 @@
 #Using a common Given statement
 When /^I click the title of the post$/ do
   #Opens the first posted blog
-  @page.button(:id => "home-link").click
+  @page.go_to_post
 end
 
 Then /^the browser opens the entire post page$/ do
